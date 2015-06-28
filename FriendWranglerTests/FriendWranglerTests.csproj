@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -43,11 +46,7 @@
         <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <ItemGroup>
     <Compile Include="Test.cs" />
@@ -56,6 +55,23 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\FriendWrangler.Core.csproj">
+      <Project>{80cfa0ef-a7cb-4ab6-ab64-6bea2d9348e9}</Project>
+      <Name>FriendWrangler.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendWrangler\FriendWrangler.Droid\FriendWrangler.Droid.csproj">
+      <Project>{298cf306-7127-4455-a3cd-567d17b1bd6d}</Project>
+      <Name>FriendWrangler.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FriendWrangler\FriendWrangler.iOS\FriendWrangler.iOS.csproj">
+      <Project>{8f2f15e7-49dc-4953-aad9-cf90e05570f3}</Project>
+      <Name>FriendWrangler.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

@@ -1,12 +1,17 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting; 
+using NUnit.Framework; 
 
 namespace FriendWranglerTests
 {
-    [TestClass]
+    [TestFixture ()]
     public class Test
     {
-        [TestMethod]
+        public static void SetUp()
+        {
+            // Register Dependencies
+        }
+
+        [Test ()]
         public void TestMethod1()
         {
         }
