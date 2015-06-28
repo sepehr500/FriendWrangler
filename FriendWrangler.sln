@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendWrangler.Droid", "Fri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendWrangler.WinPhone", "FriendWrangler\FriendWrangler.WinPhone\FriendWrangler.WinPhone.csproj", "{4758A28A-8258-4138-9C5F-FF2F34CE2B3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendWranglerTests", "FriendWranglerTests\FriendWranglerTests.csproj", "{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		FriendWrangler\FriendWrangler\FriendWrangler.projitems*{8f2f15e7-49dc-4953-aad9-cf90e05570f3}*SharedItemsImports = 4
@@ -99,6 +101,22 @@ Global
 		{4758A28A-8258-4138-9C5F-FF2F34CE2B3C}.Release|x86.ActiveCfg = Release|x86
 		{4758A28A-8258-4138-9C5F-FF2F34CE2B3C}.Release|x86.Build.0 = Release|x86
 		{4758A28A-8258-4138-9C5F-FF2F34CE2B3C}.Release|x86.Deploy.0 = Release|x86
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C4AD69B8-B21E-4B26-A0A1-DEBFAF6DA3DF}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
