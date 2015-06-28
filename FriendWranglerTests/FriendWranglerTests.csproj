@@ -35,8 +35,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -51,10 +63,10 @@
   <ItemGroup>
     <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\LoginViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -67,10 +79,6 @@
     <ProjectReference Include="..\FriendWrangler\FriendWrangler.Droid\FriendWrangler.Droid.csproj">
       <Project>{298cf306-7127-4455-a3cd-567d17b1bd6d}</Project>
       <Name>FriendWrangler.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FriendWrangler\FriendWrangler.iOS\FriendWrangler.iOS.csproj">
-      <Project>{8f2f15e7-49dc-4953-aad9-cf90e05570f3}</Project>
-      <Name>FriendWrangler.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

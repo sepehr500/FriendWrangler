@@ -1,5 +1,7 @@
 ﻿using System;
-using NUnit.Framework; 
+using NUnit.Framework;
+using FriendWrangler.Core.Services;
+using FriendWrangler.Core.Fakes; 
 
 namespace FriendWranglerTests
 {
@@ -8,6 +10,9 @@ namespace FriendWranglerTests
     {
         public static void SetUp()
         {
+            ServiceContainer.Register<IWebService>(() => new FakeWebService { SleepDuration = 1 });
+            ServiceContainer.Register<ISettings>(() => new FakeSettings());
+
             // Register Dependencies
         }
 
