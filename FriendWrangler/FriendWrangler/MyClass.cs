@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FriendWrangler
+namespace FriendWrangle.Core
 {
 	public class MyClass
 	{

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FriendWrangler", "FriendWrangler\FriendWrangler\FriendWrangler.shproj", "{3FE16575-DAFE-46F1-895B-8BFBC4A50EF9}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FriendWrangler.Core", "FriendWrangler\FriendWrangler\FriendWrangler.Core.shproj", "{3FE16575-DAFE-46F1-895B-8BFBC4A50EF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendWrangler.iOS", "FriendWrangler\FriendWrangler.iOS\FriendWrangler.iOS.csproj", "{8F2F15E7-49DC-4953-AAD9-CF90E05570F3}"
 EndProject
