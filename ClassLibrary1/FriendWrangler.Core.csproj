@@ -44,6 +44,7 @@
     <Compile Include="Services\ServiceContainer.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\SendViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
