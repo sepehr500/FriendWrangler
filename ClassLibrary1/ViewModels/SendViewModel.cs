@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace FriendWrangler.Core.ViewModels
 {
-    class SendViewModel : BaseViewModel
+    class SendInvitationViewModel : BaseViewModel
     {
-        public Friend[] friends { get; set; }
+        public Friend[] FriendsInvited { get; set; }
         public int DurationInSeconds { get; set; }
-        public int InvitedCount { get; set; }
         public int AskThisManyAtATimeCount { get; set; }
 
         public async void SendMessage()
         {
-            if (friends == null || friends.Count() == 0)
+            if (FriendsInvited == null || FriendsInvited.Count() == 0)
             {
                 throw new Exception("No friends selected.");
             }
@@ -26,7 +25,7 @@ namespace FriendWrangler.Core.ViewModels
             {
                 int acceptedCount = 0;
                 int askedCount = 0;
-                foreach (var friend in friends)
+                foreach (var friend in FriendsInvited)
                 {
                     await service.SendMessage(friend);
                     askedCount++;
@@ -39,7 +38,7 @@ namespace FriendWrangler.Core.ViewModels
                     }
                     // check to see if they replied positively
                     // InviteCount++
-                    if (acceptedCount == InvitedCount) break;
+                    if (acceptedCount == FriendsInvited.Count()) break;
                 }
             }
             finally

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FriendWrangler.Core.Models
 {
-    public class Invitations
+    public class InvitationLog
     {
         #region Fields
 
