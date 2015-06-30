@@ -16,8 +16,8 @@ namespace FriendWrangler.Core.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
-        public Invitations Invitations { get; set; }
-       
+        public InvitationLog InvitationLog { get; set; }
+
         #endregion
 
         #region Constructors
