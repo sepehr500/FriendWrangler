@@ -3,32 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FriendWrangler.Core.Models;
 
-namespace FriendWrangler.Core.Models
+namespace FriendWrangler.Core.Services.Facebook
 {
-    public class InvitationController
+    public class FacebookInvitationService
     {
-        #region Fields
 
         List<Invitation> _invitations;
         Invitation _initialInvitation;
         List<Friend> _friends;
-
-        #endregion
-
-        #region Constructors
-
-        private InvitationController()
-        {
-
-        }
-
-        public InvitationController(Invitation invitation, List<Friend> _friends)
-        {
-            _initialInvitation = invitation;
-        }
-
-        #endregion
 
         public async Task SendInvitations()
         {
@@ -36,11 +20,11 @@ namespace FriendWrangler.Core.Models
             {
                 throw new Exception("Null invitation.");
             }
-            if (_friends == null) 
+            if (_friends == null)
             {
                 throw new Exception("Null friend's list.");
             }
-            if ( _friends.Count == 0)
+            if (_friends.Count == 0)
             {
                 throw new Exception("No friends selected.");
             }
@@ -57,6 +41,5 @@ namespace FriendWrangler.Core.Models
             }
 
         }
-
     }
 }

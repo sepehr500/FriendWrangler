@@ -3,7 +3,7 @@ using NUnit.Framework;
 using FriendWrangler.Core.ViewModels;
 using FriendWrangler.Core.Services;
 
-namespace FriendWranglerTests
+namespace FriendWranglerTests.ViewModels
 {
     [TestFixture ()]
     public class LoginViewModelTests
