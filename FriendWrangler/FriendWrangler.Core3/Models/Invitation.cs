@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 
 namespace FriendWrangler.Core.Models
@@ -24,6 +25,8 @@ namespace FriendWrangler.Core.Models
 
         #region Properties
 
+        public int Id { get; set; }
+        public string EventName { get; set; }
         public MessageStatus Status { get; set; }
 
         #endregion
@@ -102,9 +105,22 @@ namespace FriendWrangler.Core.Models
         /// <summary>
         /// Analyzes the sentiment
         /// </summary>
-        /// <param name="x"></param>
+        /// <param name="message"></param>
         /// <returns></returns>
-        public Answer AnalyzeSentiment(string x) { return Answer.Yes; }
+        public Answer AnalyzeSentiment(string message)
+        {
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("http://text-processing.com");
+            var content = new FormUrlEncodedContent(new[] 
+            {
+                new KeyValuePair<string, string>("text", message)
+            });
+            var result = client.PostAsync("/api/sentiment/", content).Result;
+            string resultContent = result.Content.ReadAsStringAsync().Result;
+            return  Answer.Yes;
+
+        }
+
 
         #endregion
        
