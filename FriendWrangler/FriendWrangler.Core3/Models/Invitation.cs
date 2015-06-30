@@ -21,6 +21,11 @@ namespace FriendWrangler.Core.Models
         {
             Status = MessageStatus.NotYetSent;
         }
+        public Invitation(Friend friend)
+        {
+            Status = MessageStatus.NotYetSent;
+            Friend = friend;
+        }
 
         #endregion
 
@@ -29,6 +34,8 @@ namespace FriendWrangler.Core.Models
         public int Id { get; set; }
         public string EventName { get; set; }
         public MessageStatus Status { get; set; }
+
+        public  Friend Friend { get; set; }
 
         #endregion
 

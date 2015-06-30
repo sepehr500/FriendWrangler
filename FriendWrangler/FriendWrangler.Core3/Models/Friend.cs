@@ -19,6 +19,15 @@ namespace FriendWrangler.Core.Models
         public InvitationLog InvitationLog { get; set; }
 
         #endregion
+#region Methods
+
+        public void AddInvitation(Invitation invitation)
+        {
+            invitation.Friend = this;
+            InvitationLog.Invitations.Add(invitation);
+
+        }
+#endregion
 
         #region Constructors
 

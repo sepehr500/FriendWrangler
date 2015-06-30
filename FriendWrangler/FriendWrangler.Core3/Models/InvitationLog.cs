@@ -9,8 +9,15 @@ namespace FriendWrangler.Core.Models
     {
         #region Fields
 
-        private List<Invitation> _invitations;
+        public List<Invitation> Invitations;
         
+        #endregion
+        #region Methods
+
+
+
+
+
         #endregion
 
         #region Indexer
@@ -21,11 +28,11 @@ namespace FriendWrangler.Core.Models
             {
                 // This indexer is very simple, and just returns or sets 
                 // the corresponding element from the internal array. 
-                return _invitations[i];
+                return Invitations[i];
             }
             set
             {
-                _invitations[i] = value;
+                Invitations[i] = value;
             }
         }
 
