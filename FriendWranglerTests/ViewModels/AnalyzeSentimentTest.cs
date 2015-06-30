@@ -21,6 +21,8 @@ namespace FriendWranglerTests.ViewModels
             [SetUp]
             public void SetUp()
             {
+                Test.SetUp(); // sets up dependencies
+                
                 this.Invitation = new Invitation();
             }
 

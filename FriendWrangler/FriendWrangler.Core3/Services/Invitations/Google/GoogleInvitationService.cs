@@ -5,26 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using FriendWrangler.Core.Models;
 
-namespace FriendWrangler.Core.Services.Facebook
+namespace FriendWrangler.Core.Services.Invitations.Google
 {
-    public class FacebookInvitationService
+    public class GoogleInvitationService : IInvitationService
     {
-
-        List<Invitation> _invitations;
-        Invitation _initialInvitation;
-        List<Friend> _friends;
-
-        public async Task SendInvitations()
+        private List<Invitation> invitations; 
+       
+        public Task SendInvitations(Invitation invitation, IList<Friend> friends)
         {
-            if (_initialInvitation == null)
+            if (invitation == null)
             {
                 throw new Exception("Null invitation.");
             }
-            if (_friends == null)
+            if (friends == null)
             {
                 throw new Exception("Null friend's list.");
             }
-            if (_friends.Count == 0)
+            if (friends.Count == 0)
             {
                 throw new Exception("No friends selected.");
             }
@@ -40,6 +37,7 @@ namespace FriendWrangler.Core.Services.Facebook
 
             }
 
+            return null;
         }
     }
 }
