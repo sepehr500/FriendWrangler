@@ -40,6 +40,7 @@
     <Compile Include="Fakes\FakeSettings.cs" />
     <Compile Include="Fakes\FakeWebService.cs" />
     <Compile Include="Models\Friend.cs" />
+    <Compile Include="Models\Sentiment.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ISettings.cs" />
