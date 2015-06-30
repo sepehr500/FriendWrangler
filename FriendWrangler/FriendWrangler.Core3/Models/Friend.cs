@@ -12,44 +12,42 @@ namespace FriendWrangler.Core.Models
     {
           
         #region Properties
-       
+
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string EmailAddress { get; set; }
         public InvitationLog InvitationLog { get; set; }
 
         #endregion
 #region Methods
-
+        /// <summary>
+        /// A More effective way of adding invitations to the list
+        /// </summary>
+        /// <param name="invitation"></param>
         public void AddInvitation(Invitation invitation)
         {
             invitation.Friend = this;
             InvitationLog.Invitations.Add(invitation);
 
         }
+
+        public abstract void SendMessage(string message);
 #endregion
 
         #region Constructors
 
-        private Friend()
+        protected Friend()
         {
 
         }
 
-        public Friend(string firstName, string lastName) : this (
-            firstName: firstName,
-            lastName: lastName,
-            emailAddress: FriendConstants.DEFAULT_EMAIL)
+        protected Friend(string FirstName, string LastName)
         {
-
+            this.FirstName = FirstName;
+            this.LastName = LastName;
         }
 
-        public Friend(string firstName, string lastName, string emailAddress)
-        {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.EmailAddress = emailAddress;
-        }
+        
 
         #endregion
         

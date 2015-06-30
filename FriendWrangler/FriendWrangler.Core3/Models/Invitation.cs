@@ -19,12 +19,14 @@ namespace FriendWrangler.Core.Models
 
         public Invitation()
         {
+            _timer = new Timer(0);
             Status = MessageStatus.NotYetSent;
         }
         public Invitation(Friend friend)
         {
             Status = MessageStatus.NotYetSent;
             Friend = friend;
+            _timer = new Timer(0);
         }
 
         #endregion
@@ -50,14 +52,15 @@ namespace FriendWrangler.Core.Models
             /// <summary>
             /// Starts the timer
             /// </summary>
-            public async void StartTimer()
+            public async void StartTimer(string message)
             {
                 Status = MessageStatus.Sent;
                 await _timer.Start();
-                SendMessage();
+                Friend.SendMessage(message);
             }
 
             //Needs be be triggered by an external source
+            //Each invitiation needs to subscrib to a delegate in its fiend class. Then the friend class will trigger the OnMessageReceived. This is because receiving messages changes based on the implementation.(facebook , google , text ect) 
             //When changes the status based on the analyzed sentiment then triggers status changed
             protected virtual void OnMessageReceived(string message)
             {
@@ -105,10 +108,8 @@ namespace FriendWrangler.Core.Models
         #endregion
 
         #region AbstractMethods
-        /// <summary>
-        /// Sends the message
-        /// </summary>
-        public void SendMessage() { }
+        
+        
 
         /// <summary>
         /// Analyzes the sentiment
