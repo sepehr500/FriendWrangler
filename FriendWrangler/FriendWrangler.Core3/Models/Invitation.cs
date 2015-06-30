@@ -70,7 +70,7 @@ namespace FriendWrangler.Core.Models
                 }
                 if (invitationStatusChanged != null)
                 {
-                    invitationStatusChanged(this.Status, EventArgs.Empty);
+                    invitationStatusChanged(Status, EventArgs.Empty);
                 }
 
             }
@@ -92,7 +92,7 @@ namespace FriendWrangler.Core.Models
                 Status = MessageStatus.NoResponse;
                 if (invitationStatusChanged != null)
                 {
-                    invitationStatusChanged(this.Status, EventArgs.Empty);
+                    invitationStatusChanged(Status, EventArgs.Empty);
                 }
             }
         #endregion

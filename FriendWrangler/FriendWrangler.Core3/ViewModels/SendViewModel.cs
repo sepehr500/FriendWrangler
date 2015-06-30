@@ -13,37 +13,40 @@ namespace FriendWrangler.Core.ViewModels
         public int DurationInSeconds { get; set; }
         public int AskThisManyAtATimeCount { get; set; }
 
+
         public async void SendMessage()
         {
-            if (FriendsInvited == null || FriendsInvited.Count() == 0)
+            if (FriendsInvited != null && !FriendsInvited.Any())
             {
-                throw new Exception("No friends selected.");
-            }
-
-            IsBusy = true;
-            try
-            {
-                int acceptedCount = 0;
-                int askedCount = 0;
-                foreach (var friend in FriendsInvited)
+                IsBusy = true;
+                try
                 {
-                    await service.SendMessage(friend);
-                    askedCount++;
-
-                    if (askedCount >= AskThisManyAtATimeCount)
+                    var acceptedCount = 0;
+                    var askedCount = 0;
+                    foreach (var friend in FriendsInvited)
                     {
-                        // wait this long before asking the next friend
-                        await Task.Delay(DurationInSeconds);
-                        askedCount--;
+                        await service.SendMessage(friend);
+                        askedCount++;
+
+                        if (askedCount >= AskThisManyAtATimeCount)
+                        {
+                            // wait this long before asking the next friend
+                            await Task.Delay(DurationInSeconds);
+                            askedCount--;
+                        }
+                        // check to see if they replied positively
+                        // InviteCount++
+                        if (acceptedCount == FriendsInvited.Count()) break;
                     }
-                    // check to see if they replied positively
-                    // InviteCount++
-                    if (acceptedCount == FriendsInvited.Count()) break;
+                }
+                finally
+                {
+                    IsBusy = false;
                 }
             }
-            finally
+            else
             {
-                IsBusy = false;
+                throw new Exception("No friends selected.");
             }
         }
     }
