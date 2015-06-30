@@ -27,8 +27,10 @@ namespace FriendWranglerTests.ViewModels
             [Test()]
             public async void AnalyzeSentiment()
             {
-                var x = Invitation.AnalyzeSentiment("Hello My name is jim");
-                
+                var x = Invitation.AnalyzeSentiment("I hate the earth.");
+                Console.WriteLine(x);
+                Assert.AreSame(Answer.No.ToString() , x.ToString());
+
             }
         }
 

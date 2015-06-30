@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace FriendWrangler.Core.Models
 {
@@ -117,7 +118,22 @@ namespace FriendWrangler.Core.Models
             });
             var result = client.PostAsync("/api/sentiment/", content).Result;
             string resultContent = result.Content.ReadAsStringAsync().Result;
-            return  Answer.Yes;
+            var Sentiment = JsonConvert.DeserializeObject<Sentiment>(resultContent);
+
+            if (Sentiment.Label == "pos")
+            {
+                return Answer.Yes;
+            }
+            if (Sentiment.Label == "neg")
+            {
+                return  Answer.No;
+            }
+            else
+            {
+                return Answer.Unknown;
+            }
+
+            
 
         }
 
