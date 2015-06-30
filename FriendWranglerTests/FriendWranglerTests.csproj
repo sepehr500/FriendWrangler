@@ -72,13 +72,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\FriendWrangler.Core.csproj">
-      <Project>{80cfa0ef-a7cb-4ab6-ab64-6bea2d9348e9}</Project>
+    <ProjectReference Include="..\FriendWrangler\FriendWrangler.Core3\FriendWrangler.Core.csproj">
+      <Project>{39e9598a-77f1-4328-b9c6-9aecdff5f64f}</Project>
       <Name>FriendWrangler.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FriendWrangler\FriendWrangler.Droid\FriendWrangler.Droid.csproj">
-      <Project>{298cf306-7127-4455-a3cd-567d17b1bd6d}</Project>
-      <Name>FriendWrangler.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

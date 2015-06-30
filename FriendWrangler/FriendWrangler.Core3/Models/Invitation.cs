@@ -1,9 +1,7 @@
 ﻿using FriendWrangler.Core.Classes;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Text;
 
 namespace FriendWrangler.Core.Models
@@ -26,8 +24,6 @@ namespace FriendWrangler.Core.Models
 
         #region Properties
 
-        public int Id { get; set; }
-        public string EventName { get; set; }
         public MessageStatus Status { get; set; }
 
         #endregion
@@ -108,13 +104,7 @@ namespace FriendWrangler.Core.Models
         /// </summary>
         /// <param name="x"></param>
         /// <returns></returns>
-        public Answer AnalyzeSentiment(string x)
-        {
-
-
-
-            return Answer.No;
-        }
+        public Answer AnalyzeSentiment(string x) { return Answer.Yes; }
 
         #endregion
        
