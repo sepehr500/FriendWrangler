@@ -9,7 +9,7 @@ namespace FriendWrangler.Core.ViewModels
 {
     class SendViewModel : BaseViewModel
     {
-        public User[] friends { get; set; }
+        public Friend[] friends { get; set; }
         public int DurationInSeconds { get; set; }
         public int InvitedCount { get; set; }
         public int AskThisManyAtATimeCount { get; set; }
