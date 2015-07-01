@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using FriendWrangler.Core.Enumerations;
+using FriendWrangler.Core.Models;
 using Newtonsoft.Json;
 
-namespace FriendWrangler.Core.Models
+namespace FriendWrangler.Core.Classes
 {
     public class InvitationAnalyzer
     {

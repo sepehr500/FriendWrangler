@@ -10,17 +10,26 @@ using FriendWrangler.Core.Enumerations;
 namespace FriendWrangler.Core.Models
 {
     public abstract class Friend
-    {
+    {     
         #region Properties
 
         public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public InvitationLog Log { get; set; }
+        public List<Invitation> Log { get; set; }
 
+        public IList<Invitation> ActiveInvitations
+        {
+            get { return Log.Invitations.Where(i => i.Status == InvitationStatus.NoResponse).ToList(); }
+        }
+
+        public IList<Invitation> OldInvitations
+        {
+            get { return Log.Invitations.Where(i => i.Status != InvitationStatus.NoResponse ).ToList(); }
+        } 
         #endregion
 
-#region Methods
+        #region Methods
         /// <summary>
         /// A More effective way of adding invitations to the list
         /// </summary>
@@ -28,7 +37,7 @@ namespace FriendWrangler.Core.Models
         public void AddInvitation(Invitation invitation)
         {
             invitation.Friend = this;
-            Log.Invitations.Add(invitation);
+            Log.Add(invitation);
         }
 
         public abstract void SendMessage(string message);

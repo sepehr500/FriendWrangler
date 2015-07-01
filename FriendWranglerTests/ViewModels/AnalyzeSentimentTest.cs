@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FriendWrangler.Core.Classes;
 using FriendWrangler.Core.Enumerations;
 using FriendWrangler.Core.Models;
 using FriendWrangler.Core.Services;
