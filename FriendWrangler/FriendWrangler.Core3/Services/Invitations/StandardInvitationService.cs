@@ -10,7 +10,6 @@ namespace FriendWrangler.Core.Services.Invitations
 {
     class StandardInvitationService : IInvitationService
     {
-        public List<Invitation> AcceptedInvitations { get; set; }
         private int PendingInvitations
         {
             get { return _pendingInvitations; }
@@ -21,30 +20,41 @@ namespace FriendWrangler.Core.Services.Invitations
         
         public StandardInvitationService()
         {
-            AcceptedInvitations = new List<Invitation>();
             PendingInvitations = 0;
         }
 
-        public async Task SendInvitations(Models.Invitation invitation, IList<Models.Friend> friends, int limit = 0)
+        //I want to change this so it returns the final list of initations, but I don't know how.
+        public async Task SendInvitations(Models.Invitation invitation, IList<Models.Friend> friends, int waitTime ,int TargetTotalGuests,string message, int limit = 1 )
         {
+            //List to keep invitations
+            var InvitationList = new List<Invitation>();
+            //max number of people to contact at a time
             Limit = limit;
-
+            //Populate the Friend invitation list
             foreach (var friend in friends)
             {
                 var friendInvitation = invitation.Clone(friend);
+                friendInvitation.SetTimeout(waitTime);
                 friendInvitation.invitationStatusChanged += InvitationOnInvitationStatusChanged;
+                InvitationList.Add(friendInvitation);
 
-            top:
-                if (PendingInvitations == Limit)
-                {
-                    await Task.Delay(5000);
-                    goto top;
-                }
-                friend.SendInvitation(friendInvitation);
-                PendingInvitations += 1;
-
-                if (AcceptedInvitations.Count() == Limit) break;
+                
             }
+            //While we have not reached the target number of people we want to invite, and there are still people
+            //pending or not yet sent, do stuff!
+            while (InvitationList.Count(x => x.Status == InvitationStatus.Yes) != TargetTotalGuests 
+                || InvitationList.Count(x => x.Status == InvitationStatus.Pending) != 0 
+                && InvitationList.Count(x => x.Status == InvitationStatus.NotYetSent) != 0)
+            {
+                //while we have not reached the limit of people we want pending, send messages
+                while (InvitationList.Count(x => x.Status == InvitationStatus.Pending) != limit)
+                {
+                     //might want to keep track of priority, but this might work if list is not shuffeled.
+                    //find the first person not yet send and send to them. 
+                    InvitationList.First(x => x.Status == InvitationStatus.NotYetSent).Friend.SendInvitation(message);
+                } 
+            }
+
         }
 
         public void InvitationOnInvitationStatusChanged(Invitation invitation, EventArgs eventArgs)
@@ -75,9 +85,12 @@ namespace FriendWrangler.Core.Services.Invitations
                     break;
             }
             
-            if (invitation.Status == InvitationStatus.Yes)
-                AcceptedInvitations.Add(invitation);
         }
-      
+
+
+        public Task SendInvitations(Invitation invitation, IList<Friend> friends, int limit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -44,7 +44,7 @@ namespace FriendWrangler.Core.Models
             Log.Add(invitation);
         }
 
-        public abstract void SendInvitation(Invitation message);
+        public abstract void SendInvitation(string message);
         #endregion
 
         #region Constructors

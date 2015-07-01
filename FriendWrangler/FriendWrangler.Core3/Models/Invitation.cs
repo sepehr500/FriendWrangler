@@ -27,6 +27,12 @@ namespace FriendWrangler.Core.Models
             Friend = friend;
             _timer = new Timer(0);
         }
+        protected Invitation(Friend friend, int waitTime)
+        {
+            Status = InvitationStatus.NotYetSent;
+            Friend = friend;
+            _timer = new Timer(waitTime);
+        }
 
         #endregion
 
@@ -56,8 +62,11 @@ namespace FriendWrangler.Core.Models
         #endregion
 
         #region Methods
-       
 
+        public void SetWaitTime(int time)
+        {
+            this._timer.WaitTime = time;
+        }
             
 
         
@@ -67,7 +76,7 @@ namespace FriendWrangler.Core.Models
         /// </summary>
         public async void StartTimer()
         {
-            Status = InvitationStatus.Sent;
+            Status = InvitationStatus.Pending;
             await _timer.Start();
         }
 

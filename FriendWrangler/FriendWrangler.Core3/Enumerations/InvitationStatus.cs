@@ -12,7 +12,7 @@ namespace FriendWrangler.Core.Enumerations
     public enum InvitationStatus
     {
         NotYetSent,
-        Sent,
+        Pending,
         Yes,
         No,
         NoResponse,
