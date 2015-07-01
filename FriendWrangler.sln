@@ -14,10 +14,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendWrangler.Core", "FriendWrangler\FriendWrangler.Core3\FriendWrangler.Core.csproj", "{39E9598A-77F1-4328-B9C6-9AECDFF5F64F}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		FriendWrangler\FriendWrangler\FriendWrangler.projitems*{8f2f15e7-49dc-4953-aad9-cf90e05570f3}*SharedItemsImports = 4
-		FriendWrangler\FriendWrangler\FriendWrangler.projitems*{298cf306-7127-4455-a3cd-567d17b1bd6d}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
