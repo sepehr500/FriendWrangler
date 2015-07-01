@@ -9,7 +9,7 @@ namespace FriendWrangler.Core.Services.Invitations
 {
     public interface IInvitationService
     {
-        Task SendInvitations(Invitation invitation, IList<Friend> friends );
+        Task SendInvitations( Invitation invitation, IList<Friend> friends );
         Task ReceiveInvitations();
     }
 }

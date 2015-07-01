@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FriendWrangler.Core.Models;
 
 namespace FriendWrangler.Core.Services.Invitations
 {
-    public class GoogleInvitationService : IInvitationService
+    class StandardInvitationService : IInvitationService
     {
-        public Task SendInvitations(Invitation invitation, IList<Friend> friends)
+        public Task SendInvitations(Models.Invitation invitation, IList<Models.Friend> friends)
         {
-            return null;
+            throw new NotImplementedException();
         }
 
         public Task ReceiveInvitations()
         {
-            return null;
+            throw new NotImplementedException();
         }
     }
 }
