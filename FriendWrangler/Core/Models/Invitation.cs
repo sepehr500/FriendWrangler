@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using FriendWrangler.Core.Enumerations;
@@ -39,7 +39,7 @@ namespace FriendWrangler.Core.Models
 
         public int Id { get; set; }
         public Event Event { get; set; }
-        public string Message { get; set; }
+      
         public InvitationStatus Status { get; set; }
 
         public Friend Friend { get; set; }
@@ -73,7 +73,7 @@ namespace FriendWrangler.Core.Models
         protected virtual void OnMessageReceived(string message)
         {
             _timer.Stop();
-            InvitationAnalyzer analyzer = new InvitationAnalyzer(message);
+            MessageAnalyzer analyzer = new MessageAnalyzer(message);
             var sentiment = analyzer.Sentiment;
             switch (sentiment)
             {

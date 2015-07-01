@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace FriendWrangler.Core.ViewModels
 {
-    class SendInvitationViewModel : BaseViewModel
+    public class SendInvitationViewModel : BaseViewModel
     {
         public Friend[] FriendsInvited { get; set; }
         public int DurationInSeconds { get; set; }
         public int AskThisManyAtATimeCount { get; set; }
-
 
         public async void SendMessage()
         {
@@ -25,7 +24,7 @@ namespace FriendWrangler.Core.ViewModels
                     var askedCount = 0;
                     foreach (var friend in FriendsInvited)
                     {
-                        await service.SendMessage(friend);
+                        await Service.SendMessage(friend);
                         askedCount++;
 
                         if (askedCount >= AskThisManyAtATimeCount)

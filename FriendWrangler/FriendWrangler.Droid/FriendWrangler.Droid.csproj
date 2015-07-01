@@ -44,6 +44,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AndroidInvitation.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +63,15 @@
     <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FriendWrangler.Core3\FriendWrangler.Core.csproj">
+      <Project>{39e9598a-77f1-4328-b9c6-9aecdff5f64f}</Project>
+      <Name>FriendWrangler.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\FriendWrangler\FriendWrangler.projitems" Label="Shared" Condition="Exists('..\FriendWrangler\FriendWrangler.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
