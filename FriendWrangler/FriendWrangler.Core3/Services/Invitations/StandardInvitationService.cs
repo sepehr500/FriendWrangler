@@ -10,10 +10,15 @@ namespace FriendWrangler.Core.Services.Invitations
 {
     class StandardInvitationService : IInvitationService
     {
-        public int Limit { get; set; }
         public List<Invitation> AcceptedInvitations { get; set; }
-        private int PendingInvitations { get; set; }
-
+        private int PendingInvitations
+        {
+            get { return _pendingInvitations; }
+            set { _pendingInvitations = value < 0 ? 0 : _pendingInvitations; }
+        }
+        private int _pendingInvitations;
+        public int Limit { get; set; }
+        
         public StandardInvitationService()
         {
             AcceptedInvitations = new List<Invitation>();
@@ -44,9 +49,34 @@ namespace FriendWrangler.Core.Services.Invitations
 
         public void InvitationOnInvitationStatusChanged(Invitation invitation, EventArgs eventArgs)
         {
+            // custom logic
+            switch (invitation.Status)
+            {
+                case InvitationStatus.Yes:
+                    break;
+                case InvitationStatus.No:
+                    break;
+                case InvitationStatus.NoResponse:
+                    break;
+                case InvitationStatus.NotYetSent:
+                    break;
+                case InvitationStatus.Unknown:
+                    break;
+            }
+
+            // friend has responded to the invitation. 
+            // allow the service to send an invitation to the next friend
+            switch (invitation.Status)
+            {
+                case InvitationStatus.Yes:
+                case InvitationStatus.No: 
+                case InvitationStatus.Unknown:
+                    PendingInvitations -= 1;
+                    break;
+            }
+            
             if (invitation.Status == InvitationStatus.Yes)
                 AcceptedInvitations.Add(invitation);
-            else ; // TODO
         }
       
     }
