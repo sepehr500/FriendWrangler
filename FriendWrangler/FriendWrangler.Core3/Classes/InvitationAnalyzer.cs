@@ -23,7 +23,7 @@ namespace FriendWrangler.Core.Classes
 
         public InvitationAnalyzer(string message)
         {
-            Invitation = new NullInvitation {Message = message};
+            Invitation = new Invitation {Message = message};
         }
 
         public MessageSentiment Sentiment
