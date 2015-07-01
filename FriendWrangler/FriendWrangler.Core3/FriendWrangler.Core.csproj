@@ -60,7 +60,7 @@
     <Compile Include="Services\ServiceContainer.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\SendInvitationViewModel.cs" />
+    <Compile Include="ViewModels\SendInvitationsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
