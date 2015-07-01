@@ -56,7 +56,6 @@ namespace FriendWrangler.Core.Models
             {
                 Status = MessageStatus.Sent;
                 await _timer.Start();
-                Friend.SendMessage(message);
             }
 
             //Needs be be triggered by an external source

@@ -17,6 +17,7 @@ namespace FriendWrangler.Core.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public InvitationLog InvitationLog { get; set; }
+        
 
         #endregion
 #region Methods
@@ -31,7 +32,6 @@ namespace FriendWrangler.Core.Models
 
         }
 
-        public abstract void SendMessage(string message);
 #endregion
 
         #region Constructors
