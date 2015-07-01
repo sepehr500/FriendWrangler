@@ -39,13 +39,15 @@ namespace FriendWrangler.Core.Models
         /// <param name="invitation"></param>
         public void AddInvitation(Invitation invitation)
         {
-            MessageReceived += invitation.MessageReceived;
             invitation.Friend = this;
             Log.Add(invitation);
         }
 
         public abstract void SendInvitation(string message);
+        //Should trigger the MessageRecieved event. 
+        public abstract void StartReceiveingMessages();
         #endregion
+
 
         #region Constructors
 

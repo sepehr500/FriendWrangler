@@ -67,7 +67,13 @@ namespace FriendWrangler.Core.Models
         {
             this._timer.WaitTime = time;
         }
-            
+
+        public void SendMessage(string message)
+        {
+            this.Status = InvitationStatus.Pending;
+            Friend.SendInvitation(message);
+            Friend.MessageReceived += MessageReceived;
+        }
 
         
 
@@ -105,6 +111,8 @@ namespace FriendWrangler.Core.Models
             {
                 invitationStatusChanged(this, EventArgs.Empty);
             }
+            //Unsubscribe to message received
+            Friend.MessageReceived -= MessageReceived;
         }
 
 

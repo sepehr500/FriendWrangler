@@ -51,7 +51,7 @@ namespace FriendWrangler.Core.Services.Invitations
                 {
                      //might want to keep track of priority, but this might work if list is not shuffeled.
                     //find the first person not yet send and send to them. 
-                    InvitationList.First(x => x.Status == InvitationStatus.NotYetSent).Friend.SendInvitation(message);
+                    InvitationList.First(x => x.Status == InvitationStatus.NotYetSent).SendMessage(message);
                 } 
             }
 
