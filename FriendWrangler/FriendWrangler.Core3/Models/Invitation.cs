@@ -73,6 +73,7 @@ namespace FriendWrangler.Core.Models
             this.Status = InvitationStatus.Pending;
             Friend.SendInvitation(message);
             Friend.MessageReceived += MessageReceived;
+            Task.Factory.StartNew(() => Friend.StartReceivingMessage());
         }
 
         

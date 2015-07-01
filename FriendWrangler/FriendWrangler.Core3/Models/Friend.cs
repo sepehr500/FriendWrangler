@@ -43,9 +43,13 @@ namespace FriendWrangler.Core.Models
             Log.Add(invitation);
         }
 
+        public void StartReceivingMessage()
+        {
+            if (MessageReceived != null) MessageReceived(ReceiveMessages());
+        }
+
         public abstract void SendInvitation(string message);
-        //Should trigger the MessageRecieved event. There is only one active invitation per user, so this should not be hard.
-        public abstract void StartReceiveingMessages();
+        public abstract string ReceiveMessages();
         #endregion
 
 
