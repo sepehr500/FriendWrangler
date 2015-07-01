@@ -13,11 +13,16 @@ using FriendWrangler.Core.Models;
 
 namespace FriendWrangler.Droid.Classes
 {
-    class AndroidInvitation : Invitation
+    class AndroidFriend : Friend
     {
-        public override System.Threading.Tasks.Task Send()
+        public override void SendInvitation(string message)
         {
-            return null;
+            throw new NotImplementedException();
+        }
+
+        public override string ReceiveMessages()
+        {
+            throw new NotImplementedException();
         }
     }
 }
