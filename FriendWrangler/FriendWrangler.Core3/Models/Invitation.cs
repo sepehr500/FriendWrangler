@@ -70,22 +70,22 @@ namespace FriendWrangler.Core.Models
         //Needs be be triggered by an external source
         //Each invitiation needs to subscrib to a delegate in its fiend class. Then the friend class will trigger the OnMessageReceived. This is because receiving messages changes based on the implementation.(facebook , google , text ect) 
         //When changes the status based on the analyzed sentiment then triggers status changed
-        protected virtual void OnMessageReceived(string message)
+        protected virtual void MessageReceived(string message)
         {
             _timer.Stop();
-        InvitationAnalyzer analyzer = new InvitationAnalyzer(message);
-        var sentiment = analyzer.Sentiment;
-        switch (sentiment)
+            InvitationAnalyzer analyzer = new InvitationAnalyzer(message);
+            var sentiment = analyzer.Sentiment;
+            switch (sentiment)
             {
-            case MessageSentiment.Yes:
-                Status = InvitationStatus.Yes;
-                    break;
-            case MessageSentiment.No:
-                Status = InvitationStatus.No;
-                    break;
-            case MessageSentiment.Unknown:
-                Status = InvitationStatus.Unknown;
-                    break;
+                case MessageSentiment.Yes:
+                    Status = InvitationStatus.Yes;
+                        break;
+                case MessageSentiment.No:
+                    Status = InvitationStatus.No;
+                        break;
+                case MessageSentiment.Unknown:
+                    Status = InvitationStatus.Unknown;
+                        break;
             }
             if (invitationStatusChanged != null)
             {

@@ -17,5 +17,6 @@ namespace FriendWrangler.Core.Services.Invitations
         {
             throw new NotImplementedException();
         }
+
     }
 }
