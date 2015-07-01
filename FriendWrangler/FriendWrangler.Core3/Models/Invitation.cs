@@ -91,7 +91,6 @@ namespace FriendWrangler.Core.Models
             {
                 invitationStatusChanged(Status, EventArgs.Empty);
             }
-
         }
 
 
@@ -108,7 +107,7 @@ namespace FriendWrangler.Core.Models
         protected virtual void OnTimerElapsed()
         {
             _timer.Stop();
-        Status = InvitationStatus.NoResponse;
+            Status = InvitationStatus.NoResponse;
             if (invitationStatusChanged != null)
             {
                 invitationStatusChanged(Status, EventArgs.Empty);

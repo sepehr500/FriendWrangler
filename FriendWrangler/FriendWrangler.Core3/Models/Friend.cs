@@ -18,11 +18,12 @@ namespace FriendWrangler.Core.Models
         public string LastName { get; set; }
         public List<Invitation> Log { get; set; }
 
+        public List<IContact> ContactInfo; 
+
         public IList<Invitation> ActiveInvitations
         {
             get { return Log.Where(i => i.Status == InvitationStatus.NoResponse).ToList(); }
         }
-
         public IList<Invitation> OldInvitations
         {
             get { return Log.Where(i => i.Status != InvitationStatus.NoResponse ).ToList(); }
