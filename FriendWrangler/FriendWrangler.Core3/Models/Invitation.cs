@@ -72,6 +72,7 @@ namespace FriendWrangler.Core.Models
         //When changes the status based on the analyzed sentiment then triggers status changed
         public void MessageReceived(string message)
         {
+            
             _timer.Stop();
             InvitationAnalyzer analyzer = new InvitationAnalyzer(message);
             var sentiment = analyzer.Sentiment;
