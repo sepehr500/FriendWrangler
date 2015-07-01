@@ -13,6 +13,9 @@ namespace FriendWrangler.Core.Models
     {     
         #region Properties
 
+        public delegate void ReceiveMessageEventHandler(string message);
+
+        public event ReceiveMessageEventHandler MessageReceived;  
         public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -36,6 +39,7 @@ namespace FriendWrangler.Core.Models
         /// <param name="invitation"></param>
         public void AddInvitation(Invitation invitation)
         {
+            MessageReceived += invitation.MessageReceived;
             invitation.Friend = this;
             Log.Add(invitation);
         }
