@@ -1,5 +1,9 @@
 ﻿using Foundation;
+using FriendWrangler.Core.Fakes;
+using FriendWrangler.Core.Services;
+using FriendWrangler.Core.ViewModels;
 using UIKit;
+using ServiceContainer = System.ComponentModel.Design.ServiceContainer;
 
 namespace FriendWrangler.iOS
 {
@@ -19,6 +23,9 @@ namespace FriendWrangler.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
+            //ServiceContainer.Register<IWebService>(() => new FakeWebService { SleepDuration = 1 });
+            //ServiceContainer.Register<ISettings>(() => new FakeSettings());
+            //ServiceContainer.Register<SendInvitationViewModel>(() => { return new SendInvitationViewModel(); });
 			return true;
 		}
 
@@ -46,6 +53,7 @@ namespace FriendWrangler.iOS
 		{
 			// Restart any tasks that were paused (or not yet started) while the application was inactive. 
 			// If the application was previously in the background, optionally refresh the user interface.
+            
 		}
 
 		public override void WillTerminate (UIApplication application)

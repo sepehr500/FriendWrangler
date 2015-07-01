@@ -26,8 +26,8 @@ namespace FriendWrangler.Core.ViewModels
             IsBusy = true;
             try
             {
-                Settings.User = await Service.Login(Username, Password);
-                Settings.Save();
+                settings.User = await service.Login(Username, Password);
+                settings.Save();
             }
             finally
             {

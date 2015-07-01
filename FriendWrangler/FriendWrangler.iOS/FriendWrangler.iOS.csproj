@@ -133,8 +133,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\IOSInvitation.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\IosInvitationService.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
@@ -142,6 +144,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FriendWrangler.Core3\FriendWrangler.Core.csproj">
+      <Project>{39e9598a-77f1-4328-b9c6-9aecdff5f64f}</Project>
+      <Name>FriendWrangler.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\FriendWrangler\FriendWrangler.projitems" Label="Shared" Condition="Exists('..\FriendWrangler\FriendWrangler.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
