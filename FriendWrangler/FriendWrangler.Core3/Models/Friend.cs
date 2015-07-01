@@ -16,16 +16,16 @@ namespace FriendWrangler.Core.Models
         public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public InvitationLog Log { get; set; }
+        public List<Invitation> Log { get; set; }
 
         public IList<Invitation> ActiveInvitations
         {
-            get { return Log.Invitations.Where(i => i.Status == InvitationStatus.NoResponse).ToList(); }
+            get { return Log.Where(i => i.Status == InvitationStatus.NoResponse).ToList(); }
         }
 
         public IList<Invitation> OldInvitations
         {
-            get { return Log.Invitations.Where(i => i.Status != InvitationStatus.NoResponse ).ToList(); }
+            get { return Log.Where(i => i.Status != InvitationStatus.NoResponse ).ToList(); }
         } 
         #endregion
 
@@ -37,7 +37,7 @@ namespace FriendWrangler.Core.Models
         public void AddInvitation(Invitation invitation)
         {
             invitation.Friend = this;
-            Log.Invitations.Add(invitation);
+            Log.Add(invitation);
         }
 
         //public abstract void SendMessage(string message);

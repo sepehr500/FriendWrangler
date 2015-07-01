@@ -34,7 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Classes\MessageAnalyzer.cs" />
     <Compile Include="Classes\Timer.cs" />
     <Compile Include="Constants\FriendConstants.cs" />
     <Compile Include="Enumerations\Enumerations.cs" />
@@ -48,7 +47,6 @@
     <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\Invitation.cs" />
     <Compile Include="Classes\InvitationAnalyzer.cs" />
-    <Compile Include="Classes\InvitationLog.cs" />
     <Compile Include="Classes\InvitationValidator.cs" />
     <Compile Include="Models\Sentiment.cs" />
     <Compile Include="Models\User.cs" />
