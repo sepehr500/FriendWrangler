@@ -20,12 +20,12 @@ namespace FriendWrangler.Core.Models
 
         public IList<Invitation> ActiveInvitations
         {
-            get { return Log.Where(i => i.Status == InvitationStatus.NoResponse).ToList(); }
+            get { return Log.Invitations.Where(i => i.Status == InvitationStatus.NoResponse).ToList(); }
         }
 
         public IList<Invitation> OldInvitations
         {
-            get { return Log.Where(i => i.Status != InvitationStatus.NoResponse ).ToList(); }
+            get { return Log.Invitations.Where(i => i.Status != InvitationStatus.NoResponse ).ToList(); }
         } 
         #endregion
 
@@ -40,7 +40,7 @@ namespace FriendWrangler.Core.Models
             Log.Add(invitation);
         }
 
-        //public abstract void SendMessage(string message);
+        public abstract void SendMessage(string message);
 #endregion
 
         #region Constructors
