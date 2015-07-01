@@ -44,7 +44,6 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\FacebookFriend.cs" />
     <Compile Include="Models\GoogleFriend.cs" />
-    <Compile Include="Models\NullInvitation.cs" />
     <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\Invitation.cs" />
     <Compile Include="Classes\InvitationAnalyzer.cs" />

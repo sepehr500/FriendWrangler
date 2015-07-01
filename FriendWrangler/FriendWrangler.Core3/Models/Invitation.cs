@@ -13,17 +13,13 @@ namespace FriendWrangler.Core.Models
     public class Invitation
     {
         #region Events
-        public delegate void InvitationStatusChanged(object source, EventArgs eventArgs);
+        public delegate void InvitationStatusChanged(Invitation source, EventArgs eventArgs);
         public event InvitationStatusChanged invitationStatusChanged;
         #endregion
 
         #region Constructors
 
-        protected Invitation()
-        {
-            _timer = new Timer(0);
-            Status = InvitationStatus.NotYetSent;
-        }
+        public Invitation() : this ( null ) {}
 
         protected Invitation(Friend friend)
         {
@@ -36,6 +32,14 @@ namespace FriendWrangler.Core.Models
 
         #region Properties
 
+        public Invitation Clone(Friend friend)
+        {
+            return new Invitation
+            {
+                Event = Event,
+                Message = Message
+            };
+        }
 
         public int Id { get; set; }
         public Event Event { get; set; }
@@ -61,9 +65,9 @@ namespace FriendWrangler.Core.Models
         /// <summary>
         /// Starts the timer
         /// </summary>
-        public async void StartTimer(string message)
+        public async void StartTimer()
         {
-        Status = InvitationStatus.Sent;
+            Status = InvitationStatus.Sent;
             await _timer.Start();
         }
 
@@ -90,7 +94,7 @@ namespace FriendWrangler.Core.Models
             }
             if (invitationStatusChanged != null)
             {
-                invitationStatusChanged(Status, EventArgs.Empty);
+                invitationStatusChanged(this, EventArgs.Empty);
             }
         }
 
@@ -111,7 +115,7 @@ namespace FriendWrangler.Core.Models
             Status = InvitationStatus.NoResponse;
             if (invitationStatusChanged != null)
             {
-                invitationStatusChanged(Status, EventArgs.Empty);
+                invitationStatusChanged(this, EventArgs.Empty);
             }
         }
         #endregion
