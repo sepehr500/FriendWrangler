@@ -53,6 +53,9 @@
     <Compile Include="Models\Sentiment.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Invitations\FacebookInvitationService.cs" />
+    <Compile Include="Services\Invitations\TwitterInvitationService.cs" />
+    <Compile Include="Services\Invitations\GoogleInvitationService.cs" />
     <Compile Include="Services\Invitations\IInvitationService.cs" />
     <Compile Include="Services\ISettings.cs" />
     <Compile Include="Services\IWebService.cs" />
