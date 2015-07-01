@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace FriendWrangler.Core.Models
 {
-    public abstract class Invitation
+    public class Invitation
     {
         #region Events
         public delegate void InvitationStatusChanged(object source, EventArgs eventArgs);
@@ -117,7 +117,7 @@ namespace FriendWrangler.Core.Models
 
         #region AbstractMethods
         
-        public abstract Task Send();
+        //public abstract Task Send();
             
         #endregion
        

@@ -8,7 +8,7 @@ namespace FriendWrangler.Core.Models
 {
     public class GoogleFriend : Friend
     {
-        public override void SendMessage(string message)
+        public override void SendInvitation(Invitation message)
         {
             
         }

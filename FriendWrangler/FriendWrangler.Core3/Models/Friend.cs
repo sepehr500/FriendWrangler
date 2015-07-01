@@ -18,7 +18,6 @@ namespace FriendWrangler.Core.Models
         public string LastName { get; set; }
         public List<Invitation> Log { get; set; }
 
-        public List<IContact> ContactInfo; 
 
         public IList<Invitation> ActiveInvitations
         {
@@ -41,7 +40,7 @@ namespace FriendWrangler.Core.Models
             Log.Add(invitation);
         }
 
-        public abstract void SendMessage(string message);
+        public abstract void SendInvitation(Invitation message);
 #endregion
 
         #region Constructors

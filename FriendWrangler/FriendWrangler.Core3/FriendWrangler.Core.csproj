@@ -42,11 +42,9 @@
     <Compile Include="Fakes\FakeSettings.cs" />
     <Compile Include="Fakes\FakeWebService.cs" />
     <Compile Include="Models\Event.cs" />
-    <Compile Include="Interfaces\IContact.cs" />
     <Compile Include="Models\FacebookFriend.cs" />
     <Compile Include="Models\GoogleFriend.cs" />
     <Compile Include="Models\NullInvitation.cs" />
-    <Compile Include="Models\FacebookInvitation.cs" />
     <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\Invitation.cs" />
     <Compile Include="Classes\InvitationAnalyzer.cs" />
@@ -76,6 +74,7 @@
   <ItemGroup>
     <Folder Include="Auth\" />
     <Folder Include="Data\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

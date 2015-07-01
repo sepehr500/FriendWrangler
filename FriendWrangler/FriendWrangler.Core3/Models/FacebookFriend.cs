@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FriendWrangler.Core.Models
 {
-    public class FacebookFriend : IContact
+    public class FacebookFriend : Friend
     {
+        public override void SendInvitation(Invitation message)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
