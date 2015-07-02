@@ -1,11 +1,16 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FriendWrangler.Core.Models;
+using FriendWrangler.Core.Services;
+using FriendWrangler.Core.Services.Invitations;
+using FriendWrangler.Droid.Classes;
 
 namespace FriendWrangler.Droid
 {
@@ -24,9 +29,14 @@ namespace FriendWrangler.Droid
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
+            
 			
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
+			                           var test =  new StandardInvitationService();
+                var testinvite = new Invitation(){Event = new Event(){Message = "Hello. This is a test", Name = "Birthday"} , Message = "hello. this is a test"};
+			                             var friendlist = new List<Friend>();
+                friendlist.Add(new AndroidFriend(){PhoneNumber = "5172949591"});
+                Task.Factory.StartNew(() => test.SendInvitations(testinvite, friendlist,9999999, 1, "Hello Johnny", 1));
 			};
 		}
 	}

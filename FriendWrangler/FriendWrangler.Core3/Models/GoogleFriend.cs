@@ -8,9 +8,15 @@ namespace FriendWrangler.Core.Models
 {
     public class GoogleFriend : Friend
     {
-        public override void SendInvitation(Invitation message)
+
+        public override void SendInvitation(string message)
         {
-            
+            throw new NotImplementedException();
+        }
+
+        public override string ReceiveMessages()
+        {
+            throw new NotImplementedException();
         }
     }
 }

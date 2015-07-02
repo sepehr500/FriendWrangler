@@ -9,7 +9,8 @@ namespace FriendWrangler.Core.Services.Invitations
 {
     public interface IInvitationService
     {
-        Task SendInvitations(Invitation invitation, IList<Friend> friends, int limit);
-        void InvitationOnInvitationStatusChanged(Invitation invitation, EventArgs eventArgs);
+        void SendInvitations(Models.Invitation invitation, IList<Models.Friend> friends, int waitTime,
+            int TargetTotalGuests, string message, int limit = 1);
+
     }
 }
