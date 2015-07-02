@@ -17,6 +17,8 @@ namespace FriendWrangler.Droid.Classes
     class AndroidFriend : Friend 
     {
         private string PhoneNumber { get; set; }
+
+        private string TextMessage { get; set; }
         public override void SendInvitation(string message)
         { 
             SmsManager.Default.SendTextMessage(PhoneNumber , null , message , null ,null);
@@ -24,7 +26,25 @@ namespace FriendWrangler.Droid.Classes
 
         public override string ReceiveMessages()
         {
-            throw new NotImplementedException();
+            TextMessage = null;
+            var receiver = new SMSBroadcastReceiver();
+            receiver.Received += SetProp;
+            while (TextMessage == null)
+            {
+
+            }
+            return TextMessage;
+        }
+
+      
+
+        public void SetProp(string message , string number)
+        {
+            if (number == PhoneNumber)
+            {
+                TextMessage = message;
+            }
+            
         }
 
 

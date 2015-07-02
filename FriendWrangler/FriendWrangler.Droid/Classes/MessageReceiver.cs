@@ -24,7 +24,7 @@ namespace FriendWrangler.Droid.Classes
     public class SMSBroadcastReceiver : BroadcastReceiver
     {
 
-        public delegate void MessageReceivedEventHandler(string message);
+        public delegate void MessageReceivedEventHandler(string message, string contactinfo);
 
         public event MessageReceivedEventHandler Received;
 
@@ -56,7 +56,7 @@ namespace FriendWrangler.Droid.Classes
                 msgs[i] = SmsMessage.CreateFromPdu(bytes);
 
                 sb.Append(string.Format("SMS From: {0}{1}Body: {2}{1}", msgs[i].OriginatingAddress, Environment.NewLine, msgs[i].MessageBody));
-                Received(msgs[i].MessageBody);
+                if (Received != null) Received(msgs[i].MessageBody , msgs[i].OriginatingAddress);
             }
 
             Toast.MakeText(context, sb.ToString(), ToastLength.Long).Show();
