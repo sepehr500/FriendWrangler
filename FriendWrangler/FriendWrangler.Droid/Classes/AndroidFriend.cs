@@ -16,7 +16,7 @@ namespace FriendWrangler.Droid.Classes
 {
     class AndroidFriend : Friend 
     {
-        private string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         private string TextMessage { get; set; }
         public override void SendInvitation(string message)

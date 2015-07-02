@@ -8,7 +8,7 @@ using FriendWrangler.Core.Models;
 
 namespace FriendWrangler.Core.Services.Invitations
 {
-    class StandardInvitationService : IInvitationService
+    public class StandardInvitationService : IInvitationService 
     {
         private int PendingInvitations
         {
@@ -24,7 +24,7 @@ namespace FriendWrangler.Core.Services.Invitations
         }
 
         //I want to change this so it returns the final list of initations, but I don't know how.
-        public async Task SendInvitations(Models.Invitation invitation, IList<Models.Friend> friends, int waitTime ,int TargetTotalGuests,string message, int limit = 1 )
+        public void SendInvitations(Models.Invitation invitation, IList<Models.Friend> friends, int waitTime ,int TargetTotalGuests,string message, int limit = 1 )
         {
             //List to keep invitations
             var InvitationList = new List<Invitation>();
