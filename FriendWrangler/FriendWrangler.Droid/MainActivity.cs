@@ -36,7 +36,7 @@ namespace FriendWrangler.Droid
                 var test = new StandardInvitationService();
                 var testinvite = new Invitation() {EventName = "Farm Party"};
                 var friendlist = new List<Friend>();
-                friendlist.Add(new AndroidFriend() { PhoneNumber = "5712949590" });
+                friendlist.Add(new AndroidFriend() { PhoneNumber = "5407356190" });
                 Task.Factory.StartNew(() => test.SendInvitations(testinvite, friendlist, 9999999, 1, "Hello Johnny", 1));
 			};
 		}
