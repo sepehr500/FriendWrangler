@@ -35,7 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Auth\Key.cs" />
-    <Compile Include="Auth\KeySingleton.cs" />
     <Compile Include="Classes\Timer.cs" />
     <Compile Include="Constants\FriendConstants.cs" />
     <Compile Include="Enumerations\Enumerations.cs" />

@@ -42,16 +42,17 @@ namespace FriendWrangler.Core.Models
         {
             return new Invitation
             {
-                Event = Event,
-                Message = Message
+                Friend = friend,
+                Id = Id,
+                EventName = EventName,
+                Status = InvitationStatus.NotYetSent
+               
             };
         }
 
         public int Id { get; set; }
-        public Event Event { get; set; }
-        public string Message { get; set; }
+        public string EventName { get; set; }
         public InvitationStatus Status { get; set; }
-
         public Friend Friend { get; set; }
         #endregion
 
@@ -94,8 +95,8 @@ namespace FriendWrangler.Core.Models
         {
             
             _timer.Stop();
-            InvitationAnalyzer analyzer = new InvitationAnalyzer(message);
-            var sentiment = analyzer.Sentiment;
+            
+            var sentiment = InvitationAnalyzer.AnalyzeMessage(message);
             switch (sentiment)
             {
                 case MessageSentiment.Yes:

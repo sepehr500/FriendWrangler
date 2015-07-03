@@ -7,6 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Telephony;
 using FriendWrangler.Core.Models;
 using FriendWrangler.Core.Services;
 using FriendWrangler.Core.Services.Invitations;
@@ -32,11 +33,11 @@ namespace FriendWrangler.Droid
             
 			
 			button.Click += delegate {
-			                           var test =  new StandardInvitationService();
-                var testinvite = new Invitation(){Event = new Event(){Message = "Hello. This is a test", Name = "Birthday"} , Message = "hello. this is a test"};
-			                             var friendlist = new List<Friend>();
-                friendlist.Add(new AndroidFriend(){PhoneNumber = "5172949591"});
-                Task.Factory.StartNew(() => test.SendInvitations(testinvite, friendlist,9999999, 1, "Hello Johnny", 1));
+                var test = new StandardInvitationService();
+                var testinvite = new Invitation() {EventName = "Farm Party"};
+                var friendlist = new List<Friend>();
+                friendlist.Add(new AndroidFriend() { PhoneNumber = "5712949591" });
+                Task.Factory.StartNew(() => test.SendInvitations(testinvite, friendlist, 9999999, 1, "Hello Johnny", 1));
 			};
 		}
 	}

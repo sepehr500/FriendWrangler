@@ -7,48 +7,33 @@ using Newtonsoft.Json;
 
 namespace FriendWrangler.Core.Classes
 {
-    public class InvitationAnalyzer
+    public static class InvitationAnalyzer
     {
 
-        public Invitation Invitation { get; set; }
-        public InvitationAnalyzer()
-        {
-            
-        }
 
-        public InvitationAnalyzer(Invitation invitation)
+        public static MessageSentiment AnalyzeMessage(string message)
         {
-            Invitation = invitation;
-        }
-
-        public InvitationAnalyzer(string message)
-        {
-            Invitation = new Invitation {Message = message};
-        }
-
-        public MessageSentiment Sentiment
-        {
-            get
-            {
-                var client = new HttpClient { BaseAddress = new Uri("http://text-processing.com") };
-                var content = new FormUrlEncodedContent(new[] 
+            var client = new HttpClient { BaseAddress = new Uri("http://text-processing.com") };
+            var content = new FormUrlEncodedContent(new[] 
                 {
-                    new KeyValuePair<string, string>("text", Invitation.Message)
+                    new KeyValuePair<string, string>("text", message)
                 });
-                var result = client.PostAsync("/api/sentiment/", content).Result;
-                var resultContent = result.Content.ReadAsStringAsync().Result;
-                var sentiment = JsonConvert.DeserializeObject<Sentiment>(resultContent);
+            var result = client.PostAsync("/api/sentiment/", content).Result;
+            var resultContent = result.Content.ReadAsStringAsync().Result;
+            var sentiment = JsonConvert.DeserializeObject<Sentiment>(resultContent);
 
-                switch (sentiment.Label)
-                {
-                    case "pos":
-                        return MessageSentiment.Yes;
-                    case "neg":
-                        return MessageSentiment.No;
-                    default:
-                        return MessageSentiment.Unknown;
-                }
-            }
-        }          
+            switch (sentiment.Label)
+            {
+                case "pos":
+                    return MessageSentiment.Yes;
+                case "neg":
+                    return MessageSentiment.No;
+                default:
+                    return MessageSentiment.Unknown;
+            } 
+        }
+
+        
+                 
     }
 }

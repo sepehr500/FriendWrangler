@@ -29,7 +29,7 @@ namespace FriendWranglerTests.ViewModels
         }
 
         [Test()]
-        public async void AnalyzeSentiment()
+        public void AnalyzeSentiment()
         {
             var x = Analyzer.Sentiment;
             Console.WriteLine(x);

@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="ViewModels\AnalyzeSentimentTest.cs" />
     <Compile Include="ViewModels\LoginViewModelTests.cs" />
   </ItemGroup>
