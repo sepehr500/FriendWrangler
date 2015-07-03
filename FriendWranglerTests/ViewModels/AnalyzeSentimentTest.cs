@@ -12,33 +12,32 @@ using NUnit.Framework;
 
 namespace FriendWranglerTests.ViewModels
 {
-    class AnalyzeSentimentTest
+   
+
+    [TestFixture()]
+    public class AnalyzeSentimentTest
     {
-
-        [TestFixture()]
-        public class LoginViewModelTests
+        public Invitation Invitation { get; set; }
+        public InvitationAnalyzer Analyzer { get; set; }
+        [SetUp]
+        public void SetUp()
         {
-            public Invitation Invitation { get; set; }
-            public InvitationAnalyzer Analyzer { get; set; }
-            [SetUp]
-            public void SetUp()
-            {
-                Test.SetUp(); // sets up dependencies
+            Test.SetUp(); // sets up dependencies
 
-                Invitation = new NullInvitation {Message = "I hate the earth"};
-                Analyzer = new InvitationAnalyzer(Invitation);
-            }
-
-            [Test()]
-            public async void AnalyzeSentiment()
-            {
-                var x = Analyzer.Sentiment;
-                Console.WriteLine(x);
-                Assert.AreSame(MessageSentiment.No.ToString() , x.ToString());
-
-            }
+            Invitation = new Invitation {Message = "I hate the earth"};
+            Analyzer = new InvitationAnalyzer(Invitation);
         }
 
+        [Test()]
+        public async void AnalyzeSentiment()
+        {
+            var x = Analyzer.Sentiment;
+            Console.WriteLine(x);
+            Assert.AreSame(MessageSentiment.No.ToString() , x.ToString());
 
+        }
     }
+
+
+    
 }

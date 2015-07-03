@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendWranglerTests", "Frie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendWrangler.Core", "FriendWrangler\FriendWrangler.Core3\FriendWrangler.Core.csproj", "{39E9598A-77F1-4328-B9C6-9AECDFF5F64F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTest", "AndroidTest\AndroidTest.csproj", "{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +132,26 @@ Global
 		{39E9598A-77F1-4328-B9C6-9AECDFF5F64F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{39E9598A-77F1-4328-B9C6-9AECDFF5F64F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{39E9598A-77F1-4328-B9C6-9AECDFF5F64F}.Release|x86.ActiveCfg = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|ARM.ActiveCfg = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
+		{A0E8A9DB-F3EB-4E9B-ABC2-97AD15B61ECD}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

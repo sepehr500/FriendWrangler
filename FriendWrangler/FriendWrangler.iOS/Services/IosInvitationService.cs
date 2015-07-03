@@ -11,12 +11,10 @@ namespace FriendWrangler.iOS.Services
     public class IosInvitationService : FriendWrangler.Core.Services.Invitations.IInvitationService
     {
 
-        public System.Threading.Tasks.Task SendInvitations(Core.Models.Invitation invitation, IList<Core.Models.Friend> friends)
-        {
-            throw new NotImplementedException();
-        }
+ 
+      
 
-        public System.Threading.Tasks.Task ReceiveInvitations()
+        public void SendInvitations(Core.Models.Invitation invitation, IList<Core.Models.Friend> friends, int waitTime, int TargetTotalGuests, string message, int limit = 1)
         {
             throw new NotImplementedException();
         }

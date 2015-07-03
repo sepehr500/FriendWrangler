@@ -11,9 +11,6 @@ namespace FriendWrangler.iOS.Classes
 {
     class IosInvitation : Invitation
     {
-        public override System.Threading.Tasks.Task Send()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -14,7 +14,7 @@ using FriendWrangler.Core.Models;
 
 namespace FriendWrangler.Droid.Classes
 {
-    class AndroidFriend : Friend 
+    public class AndroidFriend : Friend 
     {
         public string PhoneNumber { get; set; }
 
@@ -27,7 +27,7 @@ namespace FriendWrangler.Droid.Classes
         public override string ReceiveMessages()
         {
             TextMessage = null;
-            var receiver = new SMSBroadcastReceiver();
+            var receiver = new SmsBroadcastReceiver();
             receiver.Received += SetProp;
             while (TextMessage == null)
             {

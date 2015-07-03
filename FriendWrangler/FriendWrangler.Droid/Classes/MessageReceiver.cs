@@ -21,7 +21,7 @@ namespace FriendWrangler.Droid.Classes
 
     [BroadcastReceiver(Enabled = true, Label = "SMS Receiver")]
     [IntentFilter(new[] { "android.provider.Telephony.SMS_RECEIVED" })]
-    public class SMSBroadcastReceiver : BroadcastReceiver
+    public class SmsBroadcastReceiver : BroadcastReceiver
     {
 
         public delegate void MessageReceivedEventHandler(string message, string contactinfo);
